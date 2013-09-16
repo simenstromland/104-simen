@@ -1,7 +1,7 @@
-﻿function printToOutputBox(selectobj){
-var e_proglangs = document.getElemendById("proglangs");
-var e_outputbox = document.getElementById("outputbox");
-e_outputbox.innerHTML = "Du har selektert programmeringsspråket " + e_proglangs.
-options[selectobj.selectedIndex].text;
-}
+﻿//var språk = document.getElementById("språk");alert(språk);språk.style.color = "green";
 
+function printToOutputBox(selectobj){
+var e_proglangs = document.getElementById("proglangs");
+var e_outputbox = document.getElementById("outputbox");
+e_outputbox.innerHTML = "Du har valgt programeringsspråket "  + e_proglangs.options[selectobj.selectedIndex].text+"</a>";
+}

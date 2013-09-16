@@ -1,33 +1,79 @@
-﻿<DOCTYPE html>
-<body>
-<center>
-<form>
-<label for="proglangs">velg:</label>
-<select name="select-pl" id="proglangs" onChange="printToOutputBox(this">
-<option> Actionscript </option>
-<option> Applescript </option>
-<option> Asp </option>
-<option> Basic </option>
-<option> C </option>
-<option> C++ </option> 
-<option> Clojure </option>
-<option> COBOL </option> 
-<option> ColdFusion </option>
-<option> Erlang </option>
-<option> Fortran </option>
-<option> Groovy </option>
-<option> Haskell </option>
-<option> Java </option>
-<option> Javascript </option>
-<option> Lisp </option>
-<option> Perl </option>
-<option> PHP </option> 
-<option> Python </option>
-<option> Ruby </option>
-<option> Scala </option>
-<option> Scheme </option>
-</select>
-</form>
-<br>
-<span id="outputbox"> Intet programmeringsspråk er selektert. Selekter et programmeringsspråk</span>
+﻿<html>
+<head>
+
+<style> 
+
+språk {
+   text-align: center;
+   color: red;
+ }
+
+h1
+{text-align:center;
+border-bottom: 2px solid #000000;}
+body
+{text-align:center;}
+
+</style>
+
 <script src="proglangs.js"></script>
+</head>
+
+<body>
+
+<Header>
+
+<h1>
+Programmeringsspråk
+</h1>
+</Header>
+
+<p>
+
+<h2>
+Velg programmeringsspårk:
+</h2>
+
+<label for="proglangs">Velg:</label>
+<select id="proglangs" onChange="printToOutputBox(this)">
+	<option value="Blank"></option>
+	<option value="ActionScript">ActionScript</option>
+	<option value="AppleScript">AppleScript</option>
+	<option value="Asp">Asp</option>
+	<option value="BASIC">BASIC</option>
+	<option value="C">C</option>
+	<option value="C++">C++</option>
+	<option value="Clojure">Clojure</option>
+	<option value="COBOL">COBOL</option>
+	<option value="ColdFusion">ColdFusion</option>
+	<option value="Erlang">Erlang</option>
+	<option value="Fortran">Fortran</option>
+	<option value="Groovy">Groovy</option>
+	<option value="Haskell">Haskell</option>
+	<option value="Java">Java</option>
+	<option value="JavaScript">JavaScript</option>
+	<option value="Lisp">Lisp</option>
+	<option value="Perl">Perl</option>
+	<option value="PHP">PHP</option>
+	<option value="Python">Python</option>
+	<option value="Ruby">Ruby</option>
+	<option value="Scala">Scala</option>
+	<option value="Scheme">Scheme</option>
+
+</select>
+<br> 
+Du valgte:<div id="outputbox"></div>
+
+</p>
+
+	
+
+
+
+</body>
+
+
+
+
+
+</html>
