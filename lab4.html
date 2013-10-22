@@ -1,0 +1,127 @@
+﻿<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml" xml=lang="en">
+<head>
+	<title> LAB4 alfabetisk liste </title>
+	<link rel="stylesheet" type="text/css" href="lab4.css">
+	<meta charset="UTF-8"></meta>
+		<script src="js/jquery-1.8.1.js"></script>
+        <script src="js/jquery.scrollTo-1.4.7.js"></script>
+	
+	
+	<script>
+		$(function() {
+		
+		//Markere lenken og rulle til det selekterte elementet i DOM
+		$( ".firstUL li" ).each(function() {
+			$( this ).click(function() { //Fange hendelsen når brukeren klikker på en av bokstavene
+				$( ".firstUL li" ).removeClass( "selected" );// I utgangspunktet fjerne klassen som er selektert, hvis den finnes
+				$( this ).addClass( "selected" );//Legger til "selected" klassen til det elementet brukeren har klikket på
+				elementClick =$( this ).attr( "id" );//Får tak i den tilsvarende "ID" foreksempel a b og c.
+			
+				// Rulle til det selekterte DOM elementet , selektert bokstav.
+				$( ".content-container" ).scrollTo($( "#content-for-"+elementClick ), 800);
+			
+				// Endre bakgrunnsfarge
+				$( ".content-container div" ).css( {'background-color' : '#ffffff'} );
+				$( ".content-container #content-for-"+elementClick ).css( {'background-color' : '#d2e2fc'} );
+			});
+		});
+	
+				// Når "tilbake til toppen" knappen blir klikkt på må 'A' markers og innholdet må rulles til toppen
+				$( '.return-to-top' ).click(function() {
+					$( ".firstUL li" ).each(function() {
+						$( ".firstUL li" ).removeClass( "selected" );//remove classname "selected"
+						});
+			
+						// Legg til klassen selected til først bokstav i alfabetet
+						$( "#a" ).addClass( "selected" );
+						//rulle til et element, "A" i dette tilfelle
+						$( ".content-container" ).scrollTo($( "#content-for-a" ), 800);
+						//Setter bakgrunnsfargen til hvit til alle div og ti lyseblått for den selekterte div-en (a i dette tilfelle)
+						$( ".content-container div" ).css( {'background-color' : '#ffffff'} );
+						$( ".content-container #content-for-a" ).css( {'background-color' : '#d2e2fc'} ); 
+			});
+		
+		});
+	
+	</script>
+
+	
+	
+</head>	
+<body>
+<div id="body-container">
+
+	<div class="glossary-container">
+	<ul class="firstUL">
+	<li id="a" class="selected">A</li>
+	<li id="b">B</li>
+	<li id="c">C</li>
+	<li id="d">D</li>
+	<!-- kan legge til flere bokstaver her -->
+		
+		</ul>
+	</div>	<!-- lukker alfabetsbeholderen -->
+	
+	
+	<div class="content-container">
+	
+	<!-- A -->
+	<div id="content-for-a" style="background-color:#d2e2fc">
+	<!--innhold for A -->
+	
+	<dl>
+		<dt> Actionscript </dt>
+		<dd> Actionscript er et programmeringsspråk basert på
+		programvare for Adobe Flash Player-plattformen. </dd>
+		<dt> Applescript </dt>
+		<dd> AppleScript er et skriptspråk av Apple som brukes i Mac OS og Mac OS X. </dd>
+	
+	</dl>
+	<p class="return-to-top">Tilbake til toppen</p>
+</div>	
+	
+	<!-- B -->
+	<div id="content-for-b"  style="background-color:#d2e2fc">
+	<!--innhold for B -->
+	<dl>
+	
+	<dt> Basic </dt>
+	<dd> Basic er et programmeringsspråk som ble utviklet i USA i 1963, av John George Kemeny og Thomas Eugene Kurtz på Dartmouth College,
+		med det mål for øye å gjøre programmering enklere. </dd>
+	<dt> BLISS </dt>
+	<dd> Basic Language for Implementing System Software (BLISS) er et programmeringsspråk som ble utviklet av Digital Equipment Corporation (DEC) for bruk på sine datamaskiner. <dd>	
+	
+	</dl>
+	<p class="return-to-top">Tilbake til toppen</p>
+	</div>
+		<!-- C -->
+	<div id="content-for-c" style="background-color:#d2e2fc">
+	<!-- Innhold for C -->
+	<dl>
+	<dt>C</dt>
+	<dd>C er et høynivå programmeringsspråk. Språket ble utviklet fra 1969 til 1973 av Dennis Ritchie i forbindelse med implementasjonen av Unix.</dd>
+	<dt>Caml</dt>
+	<dd>Caml, Categorical Abstract Machine Language, er et programmeringsspråk i ML-familien. Det er et sterkt typet funksjonelt programmeringsspråk med fokus på typeinferens. En populær implementasjon av Caml er Objective Caml.</dd>
+	</dl>
+	<p class="return-to-top"> Tilbake til toppen</p>
+	</div>
+	
+	<!-- D -->
+	<div id="content-for-d"  style="background-color:#d2e2fc">
+	<!--innhold for D -->
+	<dl>
+	<dt> D </dt>
+	<dd> D er et programmeringsspråk utviklet av Walter Bright. Det tar mål av seg til å kombinere ytelse og fleksibillitet fra språk som C og C++, med høynivåfunksjonalitet og programmerervennlighet fra språk som Ruby og Python </dd>
+	<dt> dBASE</dt>
+	<dd> dBASE var det første forekommende databaseapplikasjon til microcomputere.</dd>
+	</dl>	
+	<p class="return-to-top">Tilbake til toppen</p>
+	</div>
+</div>
+
+<address> Laget mellom 15-22 oktober 2013 av Simen </address>
+	
+
+</body>
+</html>
